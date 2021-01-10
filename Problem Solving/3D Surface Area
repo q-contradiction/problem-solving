@@ -1,0 +1,38 @@
+https://www.hackerrank.com/challenges/3d-surface-area/copy-from/116431560
+
+int surfaceArea(vector<vector<int>> A) {
+
+    int area=0, col,row, area_left, area_right, area_front, area_back,area_downandup;
+
+    for (row=0; row<A.size(); ++row){
+        for (col=0; col<A[0].size(); ++col){
+            area_downandup=2;
+
+            if (row-1>=0)
+                area_left= (A[row][col]>A[row-1][col]) ? (A[row][col]-A[row-1][col]) : 0;
+            else
+                area_left= A[row][col];
+
+            if (row+1<A.size())
+                area_right=(A[row][col]>A[row+1][col]) ? (A[row][col]-A[row+1][col]) : 0;
+            else
+                area_right= A[row][col];
+            
+            if (col-1>=0)
+                area_front= (A[row][col]>A[row][col-1]) ? (A[row][col]-A[row][col-1]) :0;
+            else 
+                area_front=A[row][col];
+            
+            if (col+1<A[0].size())
+                area_back= (A[row][col]>A[row][col+1]) ? (A[row][col]-A[row][col+1]) :0;
+            else 
+                area_back=A[row][col];
+
+            area+=area_downandup+area_back+area_front+area_left+area_left;
+
+            
+        }
+    }
+
+    return area;
+}
