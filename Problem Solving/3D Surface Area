@@ -4,10 +4,14 @@ int surfaceArea(vector<vector<int>> A) {
 
     int area=0, col,row, area_left, area_right, area_front, area_back,area_downandup;
 
+// Calculating how much the stack of cubes in (i,j) contributes to the total area.
     for (row=0; row<A.size(); ++row){
         for (col=0; col<A[0].size(); ++col){
+            
+            // Since A(i,j) > 0, there will be at least one cube, and the area is standard 2 
             area_downandup=2;
-
+            
+            
             if (row-1>=0)
                 area_left= (A[row][col]>A[row-1][col]) ? (A[row][col]-A[row-1][col]) : 0;
             else
