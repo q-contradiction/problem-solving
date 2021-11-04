@@ -1,5 +1,8 @@
-https://www.hackerrank.com/challenges/encryption/copy-from/116329247
 
+/*
+ * Problem:
+ * www.hackerrank.com/challenges/encryption/copy-from/116329247
+ */
 
 vector<int> rowsandcolumns(int len){
 
@@ -31,9 +34,9 @@ string encryption(string s) {
     int rows=v[0], columns=v[1];
     string l="";
 
-     for (int i=0; i<columns; ++i){
-        for (int j=i; j<s.size(); j=j+columns){
-                l+=s[j];
+     for (int i = 0; i < columns; ++i){
+        for (int j = i; j < s.size(); j = j+columns){
+                l += s[j];
         }
         l+=" ";
     }
