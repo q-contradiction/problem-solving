@@ -1,7 +1,8 @@
-Problem: 
-https://www.hackerrank.com/challenges/3d-surface-area/copy-from/116431560
-
-/* The algorith calculates how much the stack of cubes in (i,j) contributes to the total area.
+/* 
+ *Problem: 
+ *www.hackerrank.com/challenges/3d-surface-area/copy-from/116431560
+ *
+ *The algorith calculates how much the stack of cubes in (i,j) contributes to the total area.
  * Since A(i,j) > 0, there will be at least one cube, and the area (down & up) is standard 2 
  * For the rest areas, we check if (i,j) is in the inner or outer part of the 2D
  * In the outer part calculation is straightforward
