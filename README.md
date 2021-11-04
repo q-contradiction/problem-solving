@@ -1,2 +1,2 @@
-# HackerRank
-Solutions to Medium/Hard HackerRank Problems in either C++ or Python
+# Problem Solving
+Solutions to interesting Problems in HackerRank/Codewars in C++ (or Python)
