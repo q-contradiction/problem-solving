@@ -1,6 +1,8 @@
-Problem:
-https://www.hackerrank.com/challenges/bigger-is-greater/problem
-
+/*
+ * Problem:
+ * www.hackerrank.com/challenges/bigger-is-greater/problem
+ *
+ */
 
 string biggerIsGreater(string w) {
 
@@ -21,6 +23,4 @@ string biggerIsGreater(string w) {
     }
 
     return "no answer";
-
-
 }
