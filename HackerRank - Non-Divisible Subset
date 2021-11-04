@@ -1,5 +1,7 @@
-Problem:
-https://www.hackerrank.com/challenges/non-divisible-subset/problem
+/*
+ * Problem:
+ * www.hackerrank.com/challenges/non-divisible-subset/problem
+ */
 
 
 int nonDivisibleSubset(int k, vector<int> s) {
