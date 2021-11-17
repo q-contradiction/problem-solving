@@ -1,6 +1,5 @@
 /*
- * Problem:
- * www.hackerrank.com/challenges/climbing-the-leaderboard/problem
+ * Problem: www.hackerrank.com/challenges/climbing-the-leaderboard/problem
  */
 
 vector<int> climbingLeaderboard(vector<int> scores, vector<int> alice) {
