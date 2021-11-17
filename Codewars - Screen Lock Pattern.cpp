@@ -1,6 +1,5 @@
 /*
- * Problem:
- * www.codewars.com/kata/585894545a8a07255e0002f1
+ * Problem : www.codewars.com/kata/585894545a8a07255e0002f1
  *
  * The algorithm identifies the next possible steps given the current dot and the visited dots in the pattern
  * Then, using a given starting point, we run a standard recursion for len = len - 1, till the length of the pattern is 1.  
