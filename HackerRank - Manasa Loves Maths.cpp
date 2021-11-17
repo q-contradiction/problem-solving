@@ -1,6 +1,5 @@
 /*
- * Problem:
- * www.hackerrank.com/challenges/manasa-loves-maths/problem
+ * Problem: www.hackerrank.com/challenges/manasa-loves-maths/problem
  *
  * Brute force search has complexity O(n!), the number of permutations of n-digit number
  *
