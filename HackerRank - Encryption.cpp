@@ -1,12 +1,11 @@
 /*
- * Problem:
- * www.hackerrank.com/challenges/encryption/copy-from/116329247
+ * Problem: www.hackerrank.com/challenges/encryption/copy-from/116329247
  */
 
 vector<int> rowsandcolumns(int len){
 
-    double x=sqrt(len);
-    int up=ceil(x), down=floor(x);
+    double x = sqrt(len);
+    int up = ceil(x), down=floor(x);
     vector<int> arr;
 
     
@@ -30,14 +29,14 @@ vector<int> rowsandcolumns(int len){
 string encryption(string s) {
 
     vector<int> v=rowsandcolumns(s.length());
-    int rows=v[0], columns=v[1];
+    int rows = v[0], columns = v[1];
     string l="";
 
      for (int i = 0; i < columns; ++i){
-        for (int j = i; j < s.size(); j = j+columns){
+        for (int j = i; j < s.size(); j = j + columns){
                 l += s[j];
         }
-        l+=" ";
+        l += " ";
     }
 
     return l;
