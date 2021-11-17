@@ -1,6 +1,5 @@
 /*
- * Problem:
- * www.hackerrank.com/challenges/non-divisible-subset/problem
+ * Problem: www.hackerrank.com/challenges/non-divisible-subset/problem
  */
 
 
