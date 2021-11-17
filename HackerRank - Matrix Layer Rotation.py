@@ -1,5 +1,4 @@
-# Problem:
-# www.hackerrank.com/challenges/matrix-rotation-algo/problem
+# Problem: www.hackerrank.com/challenges/matrix-rotation-algo/problem
 #
 # The algorithm decomposes the matrix into a number of lists and rotates them
 # After the rotation the matrix is reconstructed from the lists
