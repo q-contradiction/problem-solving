@@ -1,6 +1,5 @@
 /*
- * Problem:
- * www.hackerrank.com/challenges/bigger-is-greater/problem
+ * Problem: www.hackerrank.com/challenges/bigger-is-greater/problem
  *
  */
 
