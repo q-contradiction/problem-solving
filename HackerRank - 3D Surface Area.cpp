@@ -1,6 +1,5 @@
 /* 
- * Problem: 
- * www.hackerrank.com/challenges/3d-surface-area/problem
+ * Problem: www.hackerrank.com/challenges/3d-surface-area/problem
  *
  * The algorith calculates how much the stack of cubes in (i,j) contributes to the total area.
  * Since A(i,j) > 0, there will be at least one cube, and the area (down & up) is standard 2 
