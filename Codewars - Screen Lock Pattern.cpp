@@ -12,79 +12,75 @@
 
 using namespace std;
 
-set<char> Dots{'A', 'B', 'C', 'D', 'E', 'F', 'G' ,'H', 'I'};
+set<char> dots{'A', 'B', 'C', 'D', 'E', 'F', 'G' ,'H', 'I'};
 
-std::vector<char> visitedDots;
-set<char> AvailableDots(Dots);
+set<char> calculateConnectivity(char currentDot, set<char> availableDots) {
 
+    set<char> connections(availableDots);
 
-set<char> CalculateConnectivity(char CurrentDot, set<char> AvailableDots) {
-
-    set<char> Connections(AvailableDots);
-
-    switch (CurrentDot) {
+    switch (currentDot) {
 
     case 'A':
-        if (AvailableDots.find('E') != AvailableDots.end())
-            Connections.erase('I');
-        if (AvailableDots.find('D') != AvailableDots.end())
-            Connections.erase('G');
-        if (AvailableDots.find('B') != AvailableDots.end())
-            Connections.erase('C');
+        if (availableDots.find('E') != availableDots.end())
+            connections.erase('I');
+        if (availableDots.find('D') != availableDots.end())
+            connections.erase('G');
+        if (availableDots.find('B') != availableDots.end())
+            connections.erase('C');
         break;
 
     case 'B':
-        if (AvailableDots.find('E') != AvailableDots.end())
-            Connections.erase('H');
+        if (availableDots.find('E') != availableDots.end())
+            connections.erase('H');
         break;
 
     case 'C':
-        if (AvailableDots.find('E') != AvailableDots.end())
-            Connections.erase('G');
-        if (AvailableDots.find('B') != AvailableDots.end())
-            Connections.erase('A');
-        if (AvailableDots.find('F') != AvailableDots.end())
-            Connections.erase('I');
+        if (availableDots.find('E') != availableDots.end())
+            connections.erase('G');
+        if (availableDots.find('B') != availableDots.end())
+            connections.erase('A');
+        if (availableDots.find('F') != availableDots.end())
+            connections.erase('I');
         break;
 
     case 'D':
-        if (AvailableDots.find('E') != AvailableDots.end())
-            Connections.erase('F');
+        if (availableDots.find('E') != availableDots.end())
+            connections.erase('F');
         break;
 
     case 'E':
         break;
 
     case 'F':
-        if (AvailableDots.find('E') != AvailableDots.end())
-            Connections.erase('D');
+        if (availableDots.find('E') != availableDots.end())
+            connections.erase('D');
         break;
 
     case 'G':
-        if (AvailableDots.find('E') != AvailableDots.end())
-            Connections.erase('C');
-        if (AvailableDots.find('D') != AvailableDots.end())
-            Connections.erase('A');
-        if (AvailableDots.find('H') != AvailableDots.end())
-            Connections.erase('I');
+        if (availableDots.find('E') != availableDots.end())
+            connections.erase('C');
+        if (availableDots.find('D') != availableDots.end())
+            connections.erase('A');
+        if (availableDots.find('H') != availableDots.end())
+            connections.erase('I');
         break;
 
     case 'H':
-        if (AvailableDots.find('E') != AvailableDots.end())
-            Connections.erase('B');
+        if (availableDots.find('E') != availableDots.end())
+            connections.erase('B');
         break;
 
     case 'I':
-        if (AvailableDots.find('E') != AvailableDots.end())
-            Connections.erase('A');
-        if (AvailableDots.find('H') != AvailableDots.end())
-            Connections.erase('G');
-        if (AvailableDots.find('F') != AvailableDots.end())
-            Connections.erase('C');
+        if (availableDots.find('E') != availableDots.end())
+            connections.erase('A');
+        if (availableDots.find('H') != availableDots.end())
+            connections.erase('G');
+        if (availableDots.find('F') != availableDots.end())
+            connections.erase('C');
         break;
     }
 
-    return(Connections);
+    return(connections);
 }
 
 unsigned int countPatternsFrom(char currentDot, unsigned short length) {
@@ -96,29 +92,30 @@ unsigned int countPatternsFrom(char currentDot, unsigned short length) {
     else if (length == 1) 
         return 1;
     
+    dots.erase(currentDot);
 
-    AvailableDots.erase(currentDot);
-
-    set<char> connections = CalculateConnectivity(currentDot, AvailableDots);
+    set<char> connections = calculateConnectivity(currentDot, dots);
 
     for (auto nextDot : connections) {
         if (length > 1) 
             patterns += countPatternsFrom(nextDot, length - 1);
-        AvailableDots.insert(nextDot);
+        dots.insert(nextDot);
     }
 
-    AvailableDots.insert(currentDot);
+    dots.insert(currentDot);
     return patterns;
 }
 
 
-
 int main()
 {
-    cout << countPatternsFrom('A', 0) << endl;
-    cout << countPatternsFrom('A', 10)<< endl;
-    cout << countPatternsFrom('B', 1) << endl;
-    cout << countPatternsFrom('C', 2) << endl;
-    cout << countPatternsFrom('D', 3) << endl;
-    cout << countPatternsFrom('E', 4) << endl;
+    // Test cases
+    assert(countPatternsFrom('A', 0) == 0);
+    assert(countPatternsFrom('A', 10) == 0);
+    assert(countPatternsFrom('B', 1) == 1);
+    assert(countPatternsFrom('C', 2) == 5);
+    assert(countPatternsFrom('D', 3) == 37);
+    assert(countPatternsFrom('E', 4) == 256);
+    assert(countPatternsFrom('E', 8) == 23280);
 }
+
